@@ -10,15 +10,14 @@
 # your name in the document! (and in the filename). Don't include the plot images themselves.
 # When you have completed the assignment, save it in same file format right from RStudio 
 # (.R which is simply a plain text file) ans submit it to Github using instructions 
-# from last class and the link emailed to you.
-# If you haven't already, install the "tidyverse" package, and load it into memory
-# using the library() command
+# from last class and the link emailed to you. If you haven't already, install the
+# "tidyverse" package, and load it into memory using the library() command.
 # The data visualization lecture notes, as well as Chapter 3: Data Visualization from 
 # "R for Data Science" (available at https://r4ds.had.co.nz/ ) are good resources to 
-# provide guidance 
+# provide guidance.
 
 
-# Question 1.
+# Question 1:
 # The dataset mpg dataset is a base R dataset which includes data on fuel efficiency of a number
 # of makes and models of automobile. Have a look at this dataset using the View() command.
 # How many observations and how many variables does this dataset have?
@@ -33,32 +32,32 @@ ncol(mpg)
   # There are 11 columns, ie. this dataset has 11 variables.
 
 
-# Question 2.
-# Modify and run the ggplot code to make each class of vehicle a different colour
+# Question 2:
+# Modify and run the ggplot code to make each class of vehicle a different colour.
 
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy, colour = class))
 
 
-# Question 3.
+# Question 3:
 # Further modify and run the code to use a different shape to plot vehicles
-# according whether vehicle is front, rear or 4 wheel drive (drv)
+# according whether vehicle is front, rear or 4 wheel drive (drv).
 
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy, colour = class, shape = drv))
 
 
-# Question 4.
+# Question 4:
 # Further modify and run the code to make the size of each point on the plot proportional
-# to the number of cylinders the vehicle's engine has (cyl)
+# to the number of cylinders the vehicle's engine has (cyl).
 
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy, colour = class, shape = drv, size = cyl))
 
 
-# Question 5.
+# Question 5:
 # Modify the code to add a suitable title of your choice to your plot.
 
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy, colour = class, shape = drv, size = cyl)) +
-  labs(title = "MPG Dataset: Automobile Fuel Efficiency vs. Engine Size", x = "Engiine Size (L)", y = "Hwy Fuel Efficiency")
+  labs(title = "MPG Dataset: Automobile Fuel Efficiency vs. Engine Size", x = "Engine Size (L)", y = "Hwy Fuel Efficiency (MPG)")
