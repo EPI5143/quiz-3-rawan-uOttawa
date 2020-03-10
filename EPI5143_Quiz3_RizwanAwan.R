@@ -28,18 +28,13 @@
 library(tidyverse)
 view(mpg)
 nrow(mpg)
-  # There are 234 rows.
+  # There are 234 rows, ie. this dataset has 234 observations.
 ncol(mpg)
-  # There are 11 columns.
+  # There are 11 columns, ie. this dataset has 11 variables.
 
 
 # Question 2.
 # Modify and run the ggplot code to make each class of vehicle a different colour
-# The following commands to ggplot create a basic plot of the highway fuel efficiency
-# vs engine size (displacement in L) for vehicles in the dataset
-# ie. x=displ and y=hwy, run this code and look at the plot 
-# (click zoom in the plots window to make it bigger) 
-# ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy))
 
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy, colour = class))
@@ -66,6 +61,4 @@ ggplot(data = mpg) +
 
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy, colour = class, shape = drv, size = cyl)) +
-  ggtitle("MPG Dataset: Automobile Fuel Efficiency vs. Engine Size") +
-  xlab("Engine Size (Displacement in L)") +
-  ylab("Highway Fuel Efficiency")
+  labs(title = "MPG Dataset: Automobile Fuel Efficiency vs. Engine Size", x = "Engiine Size (L)", y = "Hwy Fuel Efficiency")
